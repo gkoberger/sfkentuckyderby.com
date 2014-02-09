@@ -115,10 +115,17 @@ body {
     }
 }
 
+body,
+#body,
+.pure-g [class *= "pure-u"],
+.pure-g-r [class *= "pure-u"] {
+    font-family: 'EB Garamond', serif;
+}
+
 #body {
     background: $bgColorContent;
-    font-family: 'EB Garamond', serif;
-    font-size: 14pt;
+    // font-family: 'EB Garamond', serif;
+    // font-size: 14pt;
     width: 80%;
     margin: auto;
     position: relative;
@@ -129,21 +136,16 @@ body {
     #navigation {
         background-color: $navBgColor;
         border-top: 8px solid $navBgHighlight;
-        height: 70px;
-
-        ul {
-            color: #fff;
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-            font-family: 'Montserrat', sans-serif;
-        }
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
 
         li {
+            font-family: 'Montserrat', sans-serif;
             float: left;
-            height: 100%;
+            height: 70px;
             line-height: 70px;
-            width: 16.6%;
             padding: 0;
             margin: 0;
             text-align: center;
@@ -164,28 +166,33 @@ body {
             a:hover, a:active {
                 color: $navBgHighlight;
             }
+
+            .guardsmen-logo {
+                height: 80%;
+                padding-bottom: 4px;
+            }
         }
     }
 
     .content {
-        font-family: Georgia, serif;
-        padding: 0 40px;
-        color: $bodyTextColor;
-        font-size: 13pt;
-        line-height: 180%;
-        overflow: auto;
+
+        p {
+            color: $bodyTextColor;
+            padding: 6px 30px;
+            font-size: 15pt;
+            line-height: 180%;
+        }
 
         .welcome {
             font-family: 'EB Garamond', serif;
             color: $bodyTextSpecialColor;
             font-size: 18pt;
-            clear: none;
         }
 
         img.inline {
             float: right;
             width: 50%;
-            margin: 0 0 10px 10px;
+            margin: 10px;
             border: 8px solid #fff;
 
             @include prefix('box-shadow', '0 0 1px 0 #000');
@@ -198,7 +205,7 @@ body {
         .button {
             font-family: 'Montserrat', sans-serif;
             background-color: $bgButton;
-            display: inline-block;
+            display: block;
             text-shadow: 0 0 1px #000;
             text-align: center;
 
@@ -221,36 +228,30 @@ body {
         }
 
         .button.buy-tickets {
-            float: right;
-            width: 260px;
+            width: 80%;
             height: 80px;
             line-height: 70px;
-            margin: 20px 0 20px 20px;
+            margin: 0 auto;
+            overflow: hidden;
         }
 
-        .sponsors {
-            clear: left;
+        .sponsor {
 
-            .sponsor {
-                float: left;
-                width: 25%;
+            .logo {
+                background-size: cover;
+                width: 160px;
+                height: 160px;
+                margin: 0 auto;
+            }
 
-                .logo {
-                    background-size: cover;
-                    width: 160px;
-                    height: 160px;
-                    margin: 0 auto;
-                }
+            .logo.sponsor1 {
+                background-image: url('../img/sponsor.png');
+            }
 
-                .logo.sponsor1 {
-                    background-image: url('../img/sponsor.png');
-                }
-
-                .title {
-                    font-family: 'Montserrat', sans-serif;
-                    font-size: 11pt;
-                    text-align: center;
-                }
+            .title {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 11pt;
+                text-align: center;
             }
         }
     }

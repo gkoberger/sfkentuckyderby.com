@@ -22,37 +22,38 @@
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
-
-        <div id="header">
-            <div class="mask"></div>
-        </div>
-        <div class="logo-header">
-            <div class="subtitle">the guardsmen present</div>
-            <div class="title">Run for the Roses</div>
-            <div class="subtitle">kentucky derby soirée &bull; May 3rd</div>
-            <div class="buttons">
-                <div class="button buy-tickets"><a href="">tickets</a></div>
-                <div class="button learn-more"><a href="javascript:;">details</a></div>
+        <div class="pure-g-r">
+            <div id="header" class="pure-u-1-1">
+                <div class="mask"></div>
             </div>
-        </div>
-        <div id="body">
-            <div id="navigation">
-                <ul>
-                    <li><a href="">details</a></li>
-                    <li><a href="">sponsors</a></li>
-                    <li><a href="">donations</a></li>
-                    <li><a href="">photos</a></li>
-                    <li><a href="">tickets</a></li>
-                    <li><a href="">about</a></li>
+            <div class="logo-header pure-u-1-1">
+                <div class="subtitle">the guardsmen present</div>
+                <div class="title">Run for the Roses</div>
+                <div class="subtitle">kentucky derby soirée &bull; May 3rd</div>
+                <div class="buttons">
+                    <div class="button buy-tickets"><a href="">tickets</a></div>
+                    <div class="button learn-more"><a href="javascript:;">details</a></div>
+                </div>
+            </div>
+            <div id="body" class="pure-u-1-1">
+                <ul id="navigation" class="pure-g-r">
+                    <li class="pure-u-1-6"><a href="">details</a></li>
+                    <li class="pure-u-1-6"><a href="">sponsors</a></li>
+                    <li class="pure-u-1-6"><a href="">donations</a></li>
+                    <li class="pure-u-1-6"><a href="">photos</a></li>
+                    <li class="pure-u-1-6"><a href="">tickets</a></li>
+                    <li class="pure-u-1-6"><a href=""><img class="guardsmen-logo" src="img/guardsmen-logo.png" alt="" /></a></li>
                 </ul>
+                <div class="pure-g-r">
+                    <div class="content">
+                        <%= yield %>
+                    </div>
+                </div>
             </div>
-            <div class="content">
-                <%= yield %>
-            </div>
-        </div>
-        <div id="footer">
-            <div class="content">
-                &copy;2014, The Guardsmen of San Francisco
+            <div id="footer" class="pure-u-1-1">
+                <div class="content">
+                    &copy;2014, The Guardsmen of San Francisco
+                </div>
             </div>
         </div>
 
