@@ -189,10 +189,20 @@ body,
             font-size: 18pt;
         }
 
-        img.inline {
+        // img.inline {
+        //     float: right;
+        //     width: 50%;
+        //     margin: 10px;
+        //     border: 8px solid #fff;
+
+        //     @include prefix('box-shadow', '0 0 1px 0 #000');
+        // }
+
+        .galleria {
             float: right;
-            width: 50%;
-            margin: 10px;
+            width: 500px;
+            height: 333px;
+            margin: 20px 30px 20px 20px;
             border: 8px solid #fff;
 
             @include prefix('box-shadow', '0 0 1px 0 #000');

@@ -92,5 +92,19 @@ $(function () {
         setTimeout(d, 0);
     });
 
+    Galleria.loadTheme('/bower_components/jquery-galleria/src/themes/classic/galleria.classic.js');
+    Galleria.configure({
+        imageCrop: true,
+        transition: 'fade',
+        autoplay: 7000,
+        showCounter: false,
+        showInfo: false,
+        thumbnails: true,
+        showImageav: false,
+        imageMargin: 0,
+        thumbMargin: 0
+    });
+    Galleria.run('.galleria');
+
 
 });
