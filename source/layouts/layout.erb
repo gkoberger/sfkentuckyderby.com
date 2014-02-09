@@ -13,6 +13,7 @@
         <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css" />
         <link rel="stylesheet" href="bower_components/pure/pure-min.css" />
         <link rel="stylesheet" href="bower_components/BigVideo.js/css/bigvideo.css" />
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=EB+Garamond|Montserrat" />
         <link rel="stylesheet" href="css/main.css" />
 
         <script src="bower_components/modernizr/modernizr.js"></script>
@@ -22,7 +23,34 @@
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
 
-        <%= yield %>
+        <div id="header">
+            <div class="mask"></div>
+        </div>
+        <div class="logo-header">
+            <div class="subtitle">the guardsmen present</div>
+            <div class="title">Run for the Roses</div>
+            <div class="subtitle">kentucky derby soirée</div>
+        </div>
+        <div id="body">
+            <div id="navigation">
+                <ul>
+                    <li><a href="">details</a></li>
+                    <li><a href="">sponsors</a></li>
+                    <li><a href="">donations</a></li>
+                    <li><a href="">photos</a></li>
+                    <li><a href="">tickets</a></li>
+                    <li><a href="">about</a></li>
+                </ul>
+            </div>
+            <div class="content">
+                <%= yield %>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="content">
+                &copy;2014, The Guardsmen of San Francisco
+            </div>
+        </div>
 
         <script src="bower_components/jquery/jquery.min.js"></script>
         <script src="bower_components/eventEmitter/EventEmitter.min.js"></script>
@@ -30,6 +58,7 @@
         <script src="bower_components/imagesloaded/imagesloaded.js"></script>
         <script src="bower_components/video.js/video.js"></script>
         <script src="bower_components/BigVideo.js/lib/bigvideo.js"></script>
+        <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

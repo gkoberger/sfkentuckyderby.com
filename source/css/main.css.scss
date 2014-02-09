@@ -1,7 +1,160 @@
-body {
-    background-color: lightblue;
+@mixin prefix($property, $value, $prefixes: ("-webkit-","-moz-","-o-","-ms-","")) {
+  @each $prefix in $prefixes {
+    #{$prefix}#{$property}: #{$value};
+  }
+}
 
-    p {
-        color: black;
+$headerBgColor: rgba(#842121, 0.8);
+$bgColor: #fff;
+$bgColorContent: #f8f7f5;
+$footerBgColor: #d2cfcf;
+$footerBgHighlight: #b1a1a0;
+$navBgColor: rgba(#2c0c0c, 1);
+$navBgHighlight: rgba(#af0534, 1);
+
+
+body {
+    background: $bgColor;
+}
+
+#header {
+    background-size: cover;
+    background: $headerBgColor url('../img/races.jpg') no-repeat 50% 50%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .mask {
+        background-color: rgba(#000, 0.7);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 200;
+        top: 0;
+        left: 0;
+    }
+}
+
+.logo-header {
+    position: absolute;
+    z-index: 201;
+    left: 50%;
+    margin-left: -300px;
+    width: 600px;
+    text-align: center;
+    background: url('../img/horse-silhouette.png') 50% 0 no-repeat;
+    background-size: 185px 125px;
+    padding-top: 120px;
+    cursor: pointer;
+    opacity: 0; // for loading
+
+    .title {
+        color: #fff;
+        font-family: 'EB Garamond', serif;
+        font-size: 54pt;
+        text-shadow: 0 0 10px #000;
+        line-height: 100%;
+    }
+
+    .subtitle {
+        font-variant: small-caps;
+        font-family: Georgia;
+        font-size: 20pt;
+        color: #ccc;
+        margin-top: 10px;
+        text-shadow: 0 0 1px #000;
+        letter-spacing: 2px;
+        line-height: 100%;
+    }
+}
+
+#body {
+    background: $bgColorContent;
+    font-family: 'EB Garamond', serif;
+    font-size: 14pt;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    z-index: 202;
+    min-height: 600px;
+    top: 2000px; // for loading
+
+    #navigation {
+        background-color: $navBgColor;
+        border-top: 8px solid $navBgHighlight;
+        height: 70px;
+
+        ul {
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        li {
+            float: left;
+            height: 100%;
+            line-height: 70px;
+            width: 16.6%;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+            font-variant: small-caps;
+            font-size: 18pt;
+            letter-spacing: 1px;
+
+            a, a:visited {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: #fff;
+
+                @include prefix('transition', '0.2s');
+            }
+
+            a:hover, a:active {
+                color: $navBgHighlight;
+            }
+        }
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
+
+#body.fixedNavigation {
+    padding-top: 80px;
+
+    #navigation {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+#big-video-wrap, #big-video-vid {
+    position: relative;
+    display: none;
+}
+
+#footer {
+    background: $footerBgColor;
+    width: 100%;
+    margin: auto;
+    position: relative;
+    z-index: 100;
+    border-top: 8px solid $footerBgHighlight;
+    top: 2000px; // for loading
+
+    .content {
+        color: #666;
+        font-size: 9pt;
+        text-align: center;
+        padding: 20px;
     }
 }
