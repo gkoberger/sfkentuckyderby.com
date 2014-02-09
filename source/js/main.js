@@ -15,7 +15,7 @@ $(function () {
             Parallax.header.height(Parallax.windowHeight);
             Parallax.body.css({
                 marginTop: Parallax.windowHeight,
-                minHeight: Parallax.windowHeight + 240
+                minHeight: Parallax.windowHeight
             });
             Parallax.startTop = (Parallax.windowHeight - Parallax.headerLogo.height()) / 2;
         }).trigger('resize');

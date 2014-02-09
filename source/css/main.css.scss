@@ -11,6 +11,9 @@ $footerBgColor: #d2cfcf;
 $footerBgHighlight: #b1a1a0;
 $navBgColor: rgba(#2c0c0c, 1);
 $navBgHighlight: rgba(#af0534, 1);
+$bodyTextColor: #252525;
+$bodyTextSpecialColor: #5d2436;
+$bgButton: #aa0932;
 
 
 body {
@@ -68,6 +71,48 @@ body {
         letter-spacing: 2px;
         line-height: 100%;
     }
+
+    .buttons {
+        margin: 20px auto 0 auto;
+        width: 280px;
+
+        .button {
+            float: left;
+            display: inline-block;
+            width: 130px;
+            overflow: auto;
+            background-color: $bgButton;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            font-variant: small-caps;
+            font-size: 18pt;
+            letter-spacing: 1px;
+            text-align: center;
+
+            a, a:visited {
+                display: inline-block;
+                padding-bottom: 4px;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: #aaa;
+
+                @include prefix('transition', '0.2s');
+            }
+
+            a:hover, a:active {
+                color: $navBgColor;
+            }
+        }
+
+        .button.buy-tickets {
+            margin-right: 10px;
+        }
+
+        .button.learn-more {
+            margin-left: 10px;
+        }
+    }
 }
 
 #body {
@@ -123,7 +168,91 @@ body {
     }
 
     .content {
-        padding: 10px;
+        font-family: Georgia, serif;
+        padding: 0 40px;
+        color: $bodyTextColor;
+        font-size: 13pt;
+        line-height: 180%;
+        overflow: auto;
+
+        .welcome {
+            font-family: 'EB Garamond', serif;
+            color: $bodyTextSpecialColor;
+            font-size: 18pt;
+            clear: none;
+        }
+
+        img.inline {
+            float: right;
+            width: 50%;
+            margin: 0 0 10px 10px;
+            border: 8px solid #fff;
+
+            @include prefix('box-shadow', '0 0 1px 0 #000');
+        }
+
+        hr {
+            clear: both;
+        }
+
+        .button {
+            font-family: 'Montserrat', sans-serif;
+            background-color: $bgButton;
+            display: inline-block;
+            text-shadow: 0 0 1px #000;
+            text-align: center;
+
+            a, a:visited {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                color: #fff;
+                font-variant: small-caps;
+                font-size: 30pt;
+                letter-spacing: 1px;
+
+                @include prefix('transition', '0.2s');
+            }
+
+            a:hover, a:active {
+                color: $navBgColor;
+            }
+        }
+
+        .button.buy-tickets {
+            float: right;
+            width: 260px;
+            height: 80px;
+            line-height: 70px;
+            margin: 20px 0 20px 20px;
+        }
+
+        .sponsors {
+            clear: left;
+
+            .sponsor {
+                float: left;
+                width: 25%;
+
+                .logo {
+                    background-size: cover;
+                    width: 160px;
+                    height: 160px;
+                    margin: 0 auto;
+                }
+
+                .logo.sponsor1 {
+                    background-image: url('../img/sponsor.png');
+                }
+
+                .title {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 11pt;
+                    text-align: center;
+                }
+            }
+        }
     }
 }
 
