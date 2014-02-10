@@ -4,8 +4,7 @@
   }
 }
 
-$headerBgColor: rgba(#842121, 0.8);
-$bgColor: #fff;
+$headerBgColor: #010306;
 $bgColorContent: #f8f7f5;
 $footerBgColor: #d2cfcf;
 $footerBgHighlight: #b1a1a0;
@@ -14,15 +13,16 @@ $navBgHighlight: rgba(#af0534, 1);
 $bodyTextColor: #252525;
 $bodyTextSpecialColor: #5d2436;
 $bgButton: #aa0932;
+$textButton: #fff;
 
 
 body {
-    background: $bgColor;
+    background: $headerBgColor;
 }
 
 #header {
+    background: $headerBgColor url('../img/races.jpg') no-repeat;
     background-size: cover;
-    background: $headerBgColor url('../img/races.jpg') no-repeat 50% 50%;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -95,13 +95,13 @@ body {
                 width: 100%;
                 height: 100%;
                 text-decoration: none;
-                color: #aaa;
+                color: $textButton;
 
                 @include prefix('transition', '0.2s');
             }
 
             a:hover, a:active {
-                color: $navBgColor;
+                background-color: darken($bgButton, 5%);
             }
         }
 
@@ -131,6 +131,11 @@ body,
     min-height: 600px;
     top: 2000px; // for loading
     overflow: auto;
+    max-width: 1200px;
+
+    .content {
+      padding: 40px;
+    }
 
     #navigation {
         background-color: $navBgColor;
@@ -233,8 +238,9 @@ body,
             }
 
             a:hover, a:active {
-                color: $navBgColor;
+                color: $textButton;
                 text-shadow: 0 0 0 #000;
+                background-color: darken($bgButton, 5%);
             }
         }
 
