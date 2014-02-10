@@ -124,14 +124,13 @@ body,
 
 #body {
     background: $bgColorContent;
-    // font-family: 'EB Garamond', serif;
-    // font-size: 14pt;
     width: 80%;
-    margin: auto;
+    margin: 0 auto;
     position: relative;
     z-index: 202;
     min-height: 600px;
     top: 2000px; // for loading
+    overflow: auto;
 
     #navigation {
         background-color: $navBgColor;
@@ -140,9 +139,11 @@ body,
         margin: 0;
         padding: 0;
         list-style-type: none;
-        z-index: 50;
+        z-index: 250;
+        overflow: auto;
 
         li {
+            overflow: auto;
             font-family: 'Montserrat', sans-serif;
             float: left;
             height: 70px;
