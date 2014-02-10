@@ -55,7 +55,7 @@ body {
 #home {
     .logo-header {
         opacity: 0;
-        @include prefix('transition', 'opacity 0.7s ease-in');
+        @include prefix('transition', 'opacity 0.7s ease-in 0.4s');
     }
     &.on {
         .logo-header {
@@ -83,7 +83,7 @@ body {
         left: 50%;
         margin-left: -85px;
         @include prefix('transform', 'translateX(230px)');
-        @include prefix('transition', '0.8s ease-out');
+        @include prefix('transition', '0.8s ease-out 0.4s');
         .on & {
             @include prefix('transform', 'translateX(0)');
         }
@@ -130,7 +130,7 @@ body {
         margin: 20px auto 0 auto;
         width: 280px;
         opacity: 0;
-        @include prefix('transition', 'opacity 0.7s ease-in 0.5s');
+        @include prefix('transition', 'opacity 0.7s ease-in 1.1s');
         .on & {
           opacity: 1;
         }
