@@ -235,6 +235,7 @@ body,
 }
 
 #body {
+    display: block;
     background: $bgColorContent;
     width: 80%;
     margin: 0 auto;
@@ -247,6 +248,7 @@ body,
 
     .content {
       padding: 40px;
+      @include prefix('box-sizing', 'border-box');
     }
 
     #navigation {
