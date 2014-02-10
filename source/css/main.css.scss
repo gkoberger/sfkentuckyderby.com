@@ -190,6 +190,15 @@ body,
             line-height: 180%;
         }
 
+        a {
+          color: $bgButton;
+          text-decoration: none;
+          border-bottom: 1px solid rgba($bgButton, 0.2);
+          &:hover {
+            border-bottom: 1px solid rgba($bgButton, 1);
+          }
+        }
+
         h1 {
             font-family: 'EB Garamond', serif;
             color: $bodyTextSpecialColor;
