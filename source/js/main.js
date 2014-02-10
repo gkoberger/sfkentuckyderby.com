@@ -105,6 +105,13 @@ $(function () {
         }, 0);
     });
 
+    $('.learn-more a').click(function(e) {
+        e.preventDefault();
+        $('html, body').animate({
+            scrollTop: $("#navigation").offset().top
+        }, 1000);
+    });
+
     if($('.galleria').length > 0) {
         Galleria.loadTheme('/bower_components/jquery-galleria/src/themes/classic/galleria.classic.js');
         Galleria.configure({
