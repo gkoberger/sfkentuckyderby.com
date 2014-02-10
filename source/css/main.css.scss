@@ -129,6 +129,11 @@ body {
     .buttons {
         margin: 20px auto 0 auto;
         width: 280px;
+        opacity: 0;
+        @include prefix('transition', 'opacity 0.7s ease-in 0.5s');
+        .on & {
+          opacity: 1;
+        }
 
         .button {
             float: left;
