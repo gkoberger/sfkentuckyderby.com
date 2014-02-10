@@ -6,8 +6,6 @@
 
 $headerBgColor: #010306;
 $bgColorContent: #f8f7f5;
-$footerBgColor: #d2cfcf;
-$footerBgHighlight: #b1a1a0;
 $navBgColor: rgba(#2c0c0c, 1);
 $navBgHighlight: rgba(#af0534, 1);
 $bodyTextColor: #252525;
@@ -393,12 +391,10 @@ body,
 }
 
 #footer {
-    background: $footerBgColor;
     width: 100%;
-    margin: auto;
+    margin: 15px auto;
     position: relative;
     z-index: 100;
-    border-top: 8px solid $footerBgHighlight;
     top: 2000px; // for loading
 
     .content {
@@ -406,5 +402,15 @@ body,
         font-size: 9pt;
         text-align: center;
         padding: 20px;
+        a {
+            opacity: 0.5;
+            @include prefix('transition', 'opacity 0.2s ease-in');
+            &:hover {
+                opacity: 1;
+            }
+            img {
+                width: 100px;
+            }
+        }
     }
 }
