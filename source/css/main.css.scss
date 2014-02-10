@@ -55,7 +55,7 @@ body {
 #home {
     .logo-header {
         opacity: 0;
-        @include prefix('transition', 'opacity 0.5s ease-in');
+        @include prefix('transition', 'opacity 0.7s ease-in');
     }
     &.on {
         .logo-header {
@@ -71,9 +71,23 @@ body {
     margin-left: -300px;
     width: 600px;
     text-align: center;
-    background: url('../img/horse-silhouette.png') 50% 75px no-repeat;
     cursor: pointer;
     opacity: 0; // for loading
+
+    .horsey {
+        width: 170px;
+        height: 90px;
+        background: url("../img/horse-silhouette.png") 0 0 no-repeat;
+        position: absolute;
+        top: 75px;
+        left: 50%;
+        margin-left: -85px;
+        @include prefix('transform', 'translateX(230px)');
+        @include prefix('transition', '0.8s ease-out');
+        .on & {
+            @include prefix('transform', 'translateX(0)');
+        }
+    }
 
     .title {
         color: #fff;
