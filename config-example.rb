@@ -70,3 +70,13 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+
+activate :s3_sync do |s3_sync|
+  s3_sync.bucket                = 'sfkentuckyderby.com' # The name of the S3 bucket you are targetting. This is globally unique.
+  s3_sync.region                = 'us-west-1'     # The AWS region for your bucket.
+  s3_sync.aws_access_key_id     = ''
+  s3_sync.aws_secret_access_key = '+PvkbjGdEVQX0zo'
+  s3_sync.delete                = false # We delete stray files by default.
+  s3_sync.after_build           = false # We chain after the build step by default. This may not be your desired behavior...
+end
+

@@ -4,11 +4,13 @@ GEM
     activesupport (3.2.16)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
+    builder (3.2.2)
     chunky_png (1.2.9)
     coffee-script (2.2.0)
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
+    colorize (0.5.8)
     compass (0.12.2)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
@@ -17,9 +19,21 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.5.3)
     eventmachine (1.0.3)
+    excon (0.25.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     ffi (1.9.3)
+    fog (1.15.0)
+      builder
+      excon (~> 0.25.0)
+      formatador (~> 0.2.0)
+      mime-types
+      multi_json (~> 1.0)
+      net-scp (~> 1.1)
+      net-ssh (>= 2.1.3)
+      nokogiri (~> 1.5)
+      ruby-hmac
+    formatador (0.2.4)
     fssm (0.2.10)
     haml (4.0.5)
       tilt
@@ -32,6 +46,7 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
+    map (6.5.1)
     middleman (3.2.2)
       coffee-script (~> 2.2.0)
       compass (>= 0.12.2)
@@ -56,12 +71,27 @@ GEM
       middleman-core (>= 3.0.2)
       multi_json (~> 1.0)
       rack-livereload
+    middleman-s3_sync (3.0.17)
+      colorize
+      fog
+      map
+      middleman-core (>= 3.0.0)
+      pmap
+      ruby-progressbar
     middleman-sprockets (3.2.0)
       middleman-core (~> 3.2)
       sprockets (~> 2.1)
       sprockets-helpers (~> 1.0.0)
       sprockets-sass (~> 1.0.0)
+    mime-types (1.25)
+    mini_portile (0.5.1)
     multi_json (1.8.4)
+    net-scp (1.1.2)
+      net-ssh (>= 2.6.5)
+    net-ssh (2.7.0)
+    nokogiri (1.6.0)
+      mini_portile (~> 0.5.0)
+    pmap (1.0.1)
     rack (1.5.2)
     rack-livereload (0.3.15)
       rack
@@ -72,6 +102,8 @@ GEM
       ffi (>= 0.5.0)
     rb-kqueue (0.2.0)
       ffi (>= 0.5.0)
+    ruby-hmac (0.4.0)
+    ruby-progressbar (1.2.0)
     sass (3.2.14)
     sprockets (2.10.1)
       hike (~> 1.2)
@@ -95,4 +127,5 @@ PLATFORMS
 DEPENDENCIES
   middleman (~> 3.2.2)
   middleman-livereload (~> 3.1.0)
+  middleman-s3_sync
   wdm (~> 0.1.0)
