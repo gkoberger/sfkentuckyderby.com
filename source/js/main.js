@@ -1,4 +1,6 @@
 $(function () {
+    if(!$('#home').length) return;
+
     window.Parallax = {};
 
     Parallax.windowHeight = 0;

@@ -15,6 +15,20 @@ $bodyTextSpecialColor: #5d2436;
 $bgButton: #aa0932;
 $textButton: #fff;
 
+@mixin gradient($from, $to) {
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient($from, $to);
+ 
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+ 
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient($from, $to);
+ 
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient($from, $to);
+}
+
 
 body {
     background: $headerBgColor;
@@ -139,6 +153,40 @@ body {
 
         .button.learn-more {
             margin-left: 10px;
+        }
+    }
+}
+
+#other {
+    #header {
+        height: 220px;
+        position: relative;
+        background-image: url(../img/static-bg.png);
+        background-position: center center;
+        .mask {
+            background-color: transparent;
+            @include gradient(rgba($headerBgColor,0.5) 50%, $headerBgColor);
+        }
+    }
+    #body {
+        top: 0px;
+        position: relative;
+    }
+    #footer {
+        top: 0px;
+        position: relative;
+    }
+    .logo-header {
+        opacity: 1;
+        background-position: 0 50%;
+        padding-left: 170px;
+        text-align: left;
+        margin-top: 49px;
+        .subtitle {
+            margin-top: -10px;
+        }
+        .top, .buttons {
+            display: none;
         }
     }
 }
