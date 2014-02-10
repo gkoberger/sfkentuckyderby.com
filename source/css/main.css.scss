@@ -40,6 +40,18 @@ body {
     }
 }
 
+#home {
+    .logo-header {
+        opacity: 0;
+        @include prefix('transition', 'opacity 0.5s ease-in');
+    }
+    &.on {
+        .logo-header {
+            opacity: 1;
+        }
+    }
+}
+
 .logo-header {
     position: absolute;
     z-index: 201;
@@ -47,9 +59,7 @@ body {
     margin-left: -300px;
     width: 600px;
     text-align: center;
-    background: url('../img/horse-silhouette.png') 50% 0 no-repeat;
-    background-size: 185px 125px;
-    padding-top: 120px;
+    background: url('../img/horse-silhouette.png') 50% 75px no-repeat;
     cursor: pointer;
     opacity: 0; // for loading
 
@@ -59,17 +69,35 @@ body {
         font-size: 54pt;
         text-shadow: 0 0 10px #000;
         line-height: 100%;
+        .fancy {
+            font-family: Baskerville;
+            font-style: italic;
+            font-size: 35px;
+            display: inline-block;
+            position: relative;
+            padding-left: 5px;
+            .fancy-for {
+                position: absolute;
+                top: -24px;
+            }
+            .fancy-the {
+                padding-left: 18px;
+            }
+        }
     }
 
     .subtitle {
-        font-variant: small-caps;
-        font-family: Georgia;
-        font-size: 20pt;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        font-size: 10pt;
         color: #ccc;
         margin-top: 10px;
         text-shadow: 0 0 1px #000;
         letter-spacing: 2px;
         line-height: 100%;
+        &.top {
+          padding-bottom: 137px;
+        }
     }
 
     .buttons {

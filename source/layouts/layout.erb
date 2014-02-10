@@ -19,7 +19,7 @@
 
         <script src="bower_components/modernizr/modernizr.js"></script>
     </head>
-    <body>
+    <body id="<%= current_page.path == 'index.html' ? 'home' : 'other' %>">
         <!--[if lt IE 7]>
             <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
         <![endif]-->
@@ -28,8 +28,8 @@
                 <div class="mask"></div>
             </div>
             <div class="logo-header pure-u-1-1">
-                <div class="subtitle">the guardsmen present</div>
-                <div class="title">Run for the Roses</div>
+                <div class="subtitle top">the guardsmen present</div>
+                <div class="title">Run <span class="fancy"><span class="fancy-for">for</span><span class="fancy-the">the</span></span> Roses</div>
                 <div class="subtitle">kentucky derby soirée &bull; May 3rd</div>
                 <div class="buttons">
                     <div class="button buy-tickets"><a href="tickets">tickets</a></div>

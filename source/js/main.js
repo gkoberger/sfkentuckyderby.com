@@ -50,9 +50,7 @@ $(function () {
 
         Parallax.body.css('top', 'auto');
         Parallax.footer.css('top', 'auto');
-        Parallax.headerLogo.animate({
-            opacity: 1
-        }, 'fast');
+        $('#home').addClass('on');
     }
 
 
