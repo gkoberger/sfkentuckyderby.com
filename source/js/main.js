@@ -57,9 +57,7 @@ $(function () {
 
 
     Parallax.headerLogo.on('click', function () {
-        $('html, body').animate({
-            scrollTop: $("#navigation").offset().top
-        }, 2000);
+        scroll($('#navigation').offset().top);
     });
 
 
@@ -98,18 +96,14 @@ $(function () {
             if(Parallax.scrolled) return;
             if(window.document.referrer.split('/')[2] === window.location.host) {
                 Parallax.scrolled = true;
-                $('html, body').animate({
-                    scrollTop: $("#navigation").offset().top
-                }, 1000);
+                scroll($('#navigation').offset().top);
             }
         }, 0);
     });
 
     $('.learn-more a').click(function(e) {
         e.preventDefault();
-        $('html, body').animate({
-            scrollTop: $("#navigation").offset().top
-        }, 1000);
+        scroll($('#navigation').offset().top);
     });
 
     if($('.galleria').length > 0) {
@@ -128,3 +122,15 @@ $(function () {
         Galleria.run('.galleria');
     }
 });
+
+var $viewport = $('html, body');
+function scroll(scrollTarget) {
+  $viewport.animate({ 
+    scrollTop: scrollTarget // set scrollTarget to your desired position
+  }, 2000);
+  $viewport.bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(e){
+    if ( e.which > 0 || e.type === "mousedown" || e.type === "mousewheel"){
+      $viewport.stop().unbind('scroll mousedown DOMMouseScroll mousewheel keyup'); // This identifies the scroll as a user action, stops the animation, then unbinds the event straight after (optional)
+    }
+  });                 
+}
