@@ -1,5 +1,11 @@
 $(function () {
-    if(!$('#home').length) return;
+    if(!$('#home').length) {
+      $('.logo-header').click(function(e) {
+        e.preventDefault();
+        window.location.href = '/';
+      });
+      return;
+    }
 
     window.Parallax = {};
 
