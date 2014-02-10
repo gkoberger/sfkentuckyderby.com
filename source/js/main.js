@@ -8,6 +8,7 @@ $(function () {
     Parallax.navigation = $('#navigation');
     Parallax.headerLogo = $('.logo-header');
     Parallax.body = $('#body');
+    Parallax.scrolled = false;
 
     function d() {
         $(window).resize(function() {
@@ -25,6 +26,8 @@ $(function () {
                 scrollTop = $(window).scrollTop(),
                 scrollTopLimited = scrollTop,
                 logoTop = 0;
+
+            Parallax.scrolled = true;
 
             if(scrollTopLimited > limit) {
                 scrollTopLimited = limit;
@@ -92,7 +95,9 @@ $(function () {
         setTimeout(d, 0);
 
         setTimeout(function () {
+            if(Parallax.scrolled) return;
             if(window.document.referrer.split('/')[2] === window.location.host) {
+                Parallax.scrolled = true;
                 $('html, body').animate({
                     scrollTop: $("#navigation").offset().top
                 }, 1000);
