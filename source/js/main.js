@@ -90,21 +90,29 @@ $(function () {
         // }, 1000);
 
         setTimeout(d, 0);
+
+        setTimeout(function () {
+            if(window.document.referrer.split('/')[2] === window.location.host) {
+                $('html, body').animate({
+                    scrollTop: $("#navigation").offset().top
+                }, 1000);
+            }
+        }, 0);
     });
 
-    Galleria.loadTheme('/bower_components/jquery-galleria/src/themes/classic/galleria.classic.js');
-    Galleria.configure({
-        imageCrop: true,
-        transition: 'fade',
-        autoplay: 7000,
-        showCounter: false,
-        showInfo: false,
-        thumbnails: true,
-        showImageav: false,
-        imageMargin: 0,
-        thumbMargin: 0
-    });
-    Galleria.run('.galleria');
-
-
+    if($('.galleria').length > 0) {
+        Galleria.loadTheme('/bower_components/jquery-galleria/src/themes/classic/galleria.classic.js');
+        Galleria.configure({
+            imageCrop: true,
+            transition: 'fade',
+            autoplay: 7000,
+            showCounter: false,
+            showInfo: false,
+            thumbnails: true,
+            showImageav: false,
+            imageMargin: 0,
+            thumbMargin: 0
+        });
+        Galleria.run('.galleria');
+    }
 });

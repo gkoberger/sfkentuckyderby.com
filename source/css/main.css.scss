@@ -140,6 +140,7 @@ body,
         margin: 0;
         padding: 0;
         list-style-type: none;
+        z-index: 50;
 
         li {
             font-family: 'Montserrat', sans-serif;
@@ -183,20 +184,18 @@ body,
             line-height: 180%;
         }
 
+        h1 {
+            font-family: 'EB Garamond', serif;
+            color: $bodyTextSpecialColor;
+            font-size: 18pt;
+            padding: 6px 30px;
+        }
+
         .welcome {
             font-family: 'EB Garamond', serif;
             color: $bodyTextSpecialColor;
             font-size: 18pt;
         }
-
-        // img.inline {
-        //     float: right;
-        //     width: 50%;
-        //     margin: 10px;
-        //     border: 8px solid #fff;
-
-        //     @include prefix('box-shadow', '0 0 1px 0 #000');
-        // }
 
         .galleria {
             float: right;
@@ -218,6 +217,7 @@ body,
             display: block;
             text-shadow: 0 0 1px #000;
             text-align: center;
+            font-size: 30pt;
 
             a, a:visited {
                 display: inline-block;
@@ -226,7 +226,6 @@ body,
                 text-decoration: none;
                 color: #fff;
                 font-variant: small-caps;
-                font-size: 30pt;
                 letter-spacing: 1px;
 
                 @include prefix('transition', '0.2s');
@@ -234,6 +233,7 @@ body,
 
             a:hover, a:active {
                 color: $navBgColor;
+                text-shadow: 0 0 0 #000;
             }
         }
 
@@ -245,23 +245,41 @@ body,
             overflow: hidden;
         }
 
+        .button.admission {
+            padding-top: 12px;
+            font-size: 18pt;
+            width: 70%;
+            height: 80px;
+            margin: 0 auto;
+            overflow: hidden;
+
+            .price {
+                text-align: center;
+                display: block;
+            }
+        }
+
         .sponsor {
 
-            .logo {
-                background-size: cover;
-                width: 160px;
-                height: 160px;
-                margin: 0 auto;
-            }
+            .content {
+                padding: 10px;
 
-            .logo.sponsor1 {
-                background-image: url('../img/sponsor.png');
-            }
+                .logo {
+                    background-size: cover;
+                    width: 160px;
+                    height: 160px;
+                    margin: 0 auto;
+                }
 
-            .title {
-                font-family: 'Montserrat', sans-serif;
-                font-size: 11pt;
-                text-align: center;
+                .logo.sponsor1 {
+                    background-image: url('../img/sponsor.png');
+                }
+
+                .title {
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 11pt;
+                    text-align: center;
+                }
             }
         }
     }
